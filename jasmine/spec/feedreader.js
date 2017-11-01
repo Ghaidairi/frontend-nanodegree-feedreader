@@ -33,7 +33,7 @@ $(function() {
         it('each feed have url and url is not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
-                expect(feed.url.length).not.toEqual("");
+                expect(feed.url.length).not.toBe(0);
             });
         });
 
@@ -67,14 +67,18 @@ $(function() {
              * clicked and does it hide when clicked again.
              */
             // open when clicked
-            it('open when clicked', function() {
-                document.querySelector('.menu-icon-link').click();
-                expect(document.body.className).toBe('.menu-hidden');
-            });
+            it('open when clicked and close when clicked again', function() {
+                // document.querySelector('.menu-icon-link').click();
+                $('.menu-icon-link').click(function() {
+                  expect($('body').hasClass('.menu-hidden')).toBe(true);
+                });
+
+            // });
             // hidden when clicked again
-            it('hidden when clicked again', function() {
-                document.querySelector('.menu-icon-link').click();
-                expect(document.body.className).not.toBe('.menu-hidden');
+            // it('hidden when clicked again', function() {
+                $('.menu-icon-link').click(function() {
+                  expect($('body').hasClass('.menu-hidden')).toBe(false);
+                });
             });
         });
 
