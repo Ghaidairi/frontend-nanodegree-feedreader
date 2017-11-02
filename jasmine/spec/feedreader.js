@@ -70,12 +70,12 @@ $(function() {
             it('open when clicked and close when clicked again', function() {
                 // document.querySelector('.menu-icon-link').click();
                 $('.menu-icon-link').click();
-                expect($('body').hasClass('menu-hidden')).toBe(true);
+                expect($('body').hasClass('menu-hidden')).toBe(false);
             // });
             // hidden when clicked again
             // it('hidden when clicked again', function() {
                 $('.menu-icon-link').click();
-                expect($('body').hasClass('menu-hidden')).toBe(false);
+                expect($('body').hasClass('menu-hidden')).toBe(true);
             });
         });
 
